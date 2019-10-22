@@ -327,6 +327,66 @@ var series3 = [
 
 
 
+
+
+
+      var series = [
+         {
+             name: 'Quarterly sales',
+             data: [28.858995,29.912597,31.755684,32.018869,34.453675,34.868647,36.321701,37.333286,39.073582,39.780222,40.127995,35.212665,36.911506,36.734404,35.484584]
+                
+         }
+      ];
+   
+      var xAxis = {
+         title: {
+            text: 'Quarters by year'
+         },
+          categories: ['2016 Qtr 1','2016 Qtr 2','2016 Qtr 3','2016 Qtr 4','2017 Qtr 1','2017 Qtr 2','2017 Qtr 3','2017 Qtr 4','2018 Qtr 1','2018 Qtr 2','2018 Qtr 3','2018 Qtr 4','2019 Qtr 1','2019 Qtr 2','2019 Qtr 3']
+       };
+   
+        // Configuration about the plot
+    var title = {
+      text: 'Decline in Sales by quarter after the impossible burger'   
+   };
+   
+   
+   var yAxis = {
+      title: {
+         text: 'Total Sales in Quarter(USD Million)'
+      },
+      plotLines: [{
+         value: 0,
+         width: 1,
+         color: '#808080'
+      }]
+   };  
+   
+   var legend = {
+      layout: 'vertical',
+      align: 'right',
+      verticalAlign: 'middle',
+      borderWidth: 0
+   };
+   
+   
+   // Data structure to hold all the configurations together
+   var json = {};
+   
+   // Tying all the configurations
+   json.title = title;
+   json.xAxis = xAxis;
+   json.yAxis = yAxis;
+   json.legend = legend;
+   
+   // Tying the data as the series data
+   json.series = series;
+   
+   // We need to couple the chart data structure with the chartPlaceHolder div
+   var someVar = document.getElementById("quarterly");
+   Highcharts.chart(someVar, json);
+
+
 });
 
 
